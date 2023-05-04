@@ -1,0 +1,53 @@
+/*******************************************************************************************
+
+@copyright (C) 2019 JooThemes.net
+
+http://joothemes.net
+
+*******************************************************************************************/
+
+body {
+    font-size: 18px;
+    color: #fff;
+    line-height: 24px;
+    background-color: #111;
+    font-family: Tahoma, Geneva, sans-serif;
+}
+#error{text-align: center; margin: auto; background-color: #111; padding: 15px; max-width: 500px;}
+
+a {
+
+      color: #e3231b;
+      text-decoration: none;
+}
+
+a:focus, a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+    color: #fff;
+    font-size: 180px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding-bottom: 0px;
+    margin: 0px;
+    line-height: 180px;
+}
+
+h2 {
+    font-size: 48px;
+    color: ##e3231b;
+    text-align: center;
+    margin: 0;
+    line-height: 50px;
+
+}
+
+p {
+    font-size: 18px;
+    color: #fff;
+    line-height: 30px;
+}
+ol{text-align: left; color: #fff}
+li{ font-size: 20px; color: #fff; }

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
+<extension version="3.5" type="template" method="upgrade">
+	<name>JooThemes-JooFood-Free</name>
+	<creationDate>November 2019</creationDate>
+	<author>JooThemes.net</author>
+	<copyright>Copyright © 2019 JooThemes.net</copyright>
+	<authorEmail>contact@joothemes.net</authorEmail>
+	<authorUrl>https://joothemes.net</authorUrl>
+	<version>1.0</version>
+	<description><![CDATA[
+<div style="font-size: 16px; line-height: 1.6; background-color: #F0F0F0; padding: 15px 20px; border: 1px solid #dedede; overflow: hidden;">
+<h1>JooFood Joomla! 3 Responsive Template</h1>
+<p><img src="../templates/joothemes-joofood-free/images/joothemes-joofood-joomla-template.jpg" alt="JooFood Joomla! 3 Responsive Template" style="padding-right: 20px;" align="left" /> <p><strong>JooFood Joomla! 3 Responsive Template developed by <a href="https://JooThemes.net" target="_blank">JooThemes.net</a>. <br />Need help to set up your template? Check out the <a href="https://joothemes.net/contact" target="_blank">JooThemes Support</a> page. <br />Download our <a href="https://joothemes.net/free-joomla-templates" target="_blank">Free Joomla templates</a>. <br />See and buy our <a href="https://joothemes.net/responsive-joomla-templates" target="_blank">Joomla Templates Premium Versions</a>. <br />Copyright © 2019 JooThemes.net - All Rights Reserved</strong>.</p>
+<hr />
+<p><a href="https://joothemes.net/responsive-joomla-templates/joofood-free-joomla-template" target="_blank" rel="noopener noreferrer" class="btn" title="Buy this template with Quickstart Package">You need the Full Quickstart Package - Buy Now</a></p>
+<p><strong>JooFood Joomla! 3 Responsive Template - November 2019</strong><br /> Version 1.0<br /> License: Commercial Design &amp; Layout Author: <a href="https://joothemes.net/" target="_blank">https://joothemes.net</a><br /> Copyright (C) 2019 JooThemes.net All Rights Reserved.<br /> Email: <a href="mailto:contact@joothemes.net">contact@JooThemes.net</a></p>
+<h2>GPL Licensing</h2>
+<p>All JooThemes.net templates are released under the GNU General Public License, version 2 (https://www.gnu.org/licenses/gpl-2.0.html). Specifically, the PHP code portions are distributed under the GPL license. If not otherwise stated, all images, manuals, cascading style sheets, and included JavaScript are NOT GPL, and are released under "JooThemes.net" Proprietary Use License" unless specifically authorized. Elements of the templates released under this proprietary license may not be redistributed or repackaged for use other than those allowed by the Terms of Use.</p>
+<h2>TEMPLATE FEATURES</h2>
+<p>JooFood - Joomla! Restaurant Template with quickstart package for restaurants, cafe bar, seafood, sushi, pizza & pasta food blogs, portal, magazine websites with JComments component. based on the Master Bootstrap Framework for Joomla! 3.x. The Bootstrap Framework makes it fully responsive to all screen resolutions and aspect ratios. The simplest way to build professional websites. Your imagination and your experience are the limit!</p>
+<h2>JooFood Joomla! 3 Responsive Template Features:</h2>
+<ul>
+<li style="font-size: 16px; line-height: 1.6;">Joomla! 3.x compatible.</li>
+<li style="font-size: 16px; line-height: 1.6;">Based on Bootstrap 3.3.5.&nbsp;One framework, every device. Bootstrap easily and efficiently scales your Joomla websites with a single code base, from phones to tablets to desktops with CSS media queries.</li>
+<li style="font-size: 16px; line-height: 1.6;">Responsive Mobile-Friendly template for all Joomla 3.x. A responsive layout automatically adapts to the viewing device, allowing for an optimized appearance on multiple devices, such as tablets.</li>
+<li style="font-size: 16px; line-height: 1.6;">Sticky pinned main menu, logo and widgets.</li>
+<li style="font-size: 16px; line-height: 1.6;">CSS Superfish multi-level dropdown pinned menu<strong>.</strong></li>
+<li style="font-size: 16px; line-height: 1.6;">Responsive multi-level menu support, flexible and cross-browser compatibility.</li>
+<li style="font-size: 16px; line-height: 1.6;">Tableless design and 100% CSS based.</li>
+<li style="font-size: 16px; line-height: 1.6;">Built by advance HTML5 and CSS3.</li>
+<li style="font-size: 16px; line-height: 1.6;">Lightweight and fast-loading.</li>
+<li style="font-size: 16px; line-height: 1.6;">Logo as Image with configuration parameters.</li>
+<li style="font-size: 16px; line-height: 1.6;">Built-in Google Fonts (<strong>more fonts - 650+ available only with Qucikstart Package</strong>).</li>
+<li style="font-size: 16px; line-height: 1.6;">Built-in social media icons for the popular social networking sites including Twitter, Facebook, Google Plus, Youtube, LinkedIn and more...</li>
+<li style="font-size: 16px; line-height: 1.6;">2 layout options: 2 columns (content + right), 1 column (content).</li>
+<li style="font-size: 16px; line-height: 1.6;">Typography Page.</li>
+<li style="font-size: 16px; line-height: 1.6;">Joomla! tags com_tags layout override -&nbsp;show articles intro text and item image with link to the full article in the result page for Joomla Tags.</li>
+<li style="font-size: 16px; line-height: 1.6;">A lot Module Positions.&nbsp;All module positions are fully collapsible.</li>
+<li style="font-size: 16px; line-height: 1.6;">Cross-Browser Support - Transport Joomla template work great with all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 9+.</li>
+<li style="font-size: 16px; line-height: 1.6;">Heading: h1, h2, h3, h4 and h5.</li>
+<li style="font-size: 16px; line-height: 1.6;">SEO SEF Optimised Layout. Optimized code for Search Engines which helps in SEO.</li>
+<li style="font-size: 16px; line-height: 1.6;">SEO Breadcrumbs with Microdata Google - this will give a nice category-display in the Google search results.</li>
+<li style="font-size: 16px; line-height: 1.6;">And more features,&nbsp;some only available in the Premium Version with quickstart package:</li>
+</ul>
+<h3>JooFood Joomla Template Quickstart Instalation Package</h3>
+<h3>What is quickstart package?</h3>
+<p>"Quickstart Package" is a JooFood Joomla Template + Joomla 3 + all content, all modules, all components and settings used in <strong><a href="https://demo.joothemes.net/joomla3/joofood" target="_blank" rel="noopener noreferrer">demo site</a></strong>. After installation You will get exactly the same as demo page.</p>
+<h3>How to install Quickstart package?</h3>
+<p>Quickstart Package install exactly the same as a normal Joomla! installation package. (To get know more about technical requirements to run Joomla! please visit: Joomla technical requirements).</p>
+<p><strong>Quickstart will save your time and work. You will get exactly the same as demo page <a href="https://demo.joothemes.net/joomla3/joofood">https://demo.joothemes.net/joomla3/joofood</a></strong></p>
+<h3>Quickstart package extra features,&nbsp;component, modules and plugins:</h3>
+<ul>
+<li style="font-size: 16px; line-height: 1.6;"><strong>Gallery plugin and module</strong> (<strong>available in Qucikstart Package</strong>).&nbsp;(Sigplus Image Gallery Plus is a straightforward way to add image or photo galleries to a Joomla article with a simple syntax. It takes a matter of minutes to set up a gallery but those who are looking for a powerful gallery solution will not be disappointed either: sigplus is suitable for both beginner and advanced users.</li>
+<li style="font-size: 16px; line-height: 1.6;"><strong>Built-in 650+ Google Fonts</strong> (<strong>available only with Qucikstart Package</strong>).</li>
+<li style="font-size: 16px; line-height: 1.6;"><strong>JUNews Ultra Pro module</strong>&nbsp;(override layouts for JooFood template). JUNews Ultra Pro module display latest news (Joomla Articles) with full control over all elements, cool effects, rich backend configs covering layout, auto thumbnail creating, images resizing, numbering articles, sorting ect...&nbsp;(available only with Qucikstart Package).&nbsp;Best Joomla module for news, articles, YouTube and RSS with many options. Fast performs and mostly optimization for over 100.000 articles! Make you easy and simple templates! In one module, a greater functionality, which replaces a number of modules. The module has the ability to create different patterns (templates), thus you can change the type of modules as you like and use the module on the news portals, on the portfolio or personal site. (JUNewsUltra Pro news module and our override template for Clients Testimonials view available only with Qucikstart Package).</li>
+<li style="font-size: 16px; line-height: 1.6;"><strong>JWeb Portfolio Display responsive grid module</strong> for Joomla that helps create a portfolio easily with filter, lightbox effect, page details and categories. There are lots of parameters and you can set them easily. This awesome module is responsive and seo optimized. Perfect solution for you to create your own portfolio on Joomla 3.x CMS.</li>
+<li style="font-size: 16px; line-height: 1.6;"><strong>JComments</strong> - a powerful and easy to use AJAX based comment system for Joomla with flexible ACL, smiles, BBCodes and avatars support. Working on this release took extra eight months, all this effort was spent to make the component more stable and usable. Considerable time was allotted for code optimization and improved compatibility to third-party extensions.</li>
+<li style="font-size: 16px; line-height: 1.6;"><strong>Joomla! tags com_tags layout override</strong> - show articles intro text and item image with link to the full article in the result page for Joomla Tags.</li>
+<li style="font-size: 16px; line-height: 1.6;"><strong>Akeeba Backup Core</strong> -&nbsp;is the most widely used open-source backup component for the Joomla! CMS. Its mission is simple: create a site backup that can be restored on any Joomla!-capable server, making it ideal not only for backups but also for site transfers or even deploying sites to your clients' servers. Akeeba Backup creates a full backup of your site in a single archive. The archive contains all the files, a database snapshot and an installer similar in function to the standard Joomla! installer.</li>
+<li style="font-size: 16px; line-height: 1.6;"><strong>JCE editor - the best WYSiWYG editor for Joomla! </strong>An award-winning, configurable WYSIWYG editor for Joomla! based on Moxiecode's TinyMCE. Includes advanced Image, File and Link handling, plugin support, and an Administration interface for editor configuration.</li>
+<li style="font-size: 16px; line-height: 1.6;"><strong>Extra SEO SEF plugin - EFSEO -</strong>&nbsp;automatically generates description meta tags by pulling text from the content to help with SEO. It also gives you the ability to set different title configurations. EFSEO is a SEO extension for Joomla! with which you can control all important metadata manually and automatically. The handling of the metadata in Joomla! has never been so easy!&nbsp;With the plugin you may change and add meta information (title, description, keywords, generator and robots) easily in the frontend and with the component in the backend. It does not matter which component you use. The plugin is active on every page of a Joomla! website and may be used correspondingly.</li>
+<li style="font-size: 16px; line-height: 1.6;"><strong>OG Meta plugin</strong> -&nbsp;Integrate your Joomla website into the Open Graph Protocol. The Open Graph Protocol enables you to integrate your Web pages into the social graph. The structured data you provide via the Open Graph Protocol defines how your page will be represented on Facebook.</li>
+<li style="font-size: 16px; line-height: 1.6;"><strong>Extra Cache plugin.</strong></li>
+<li style="font-size: 16px; line-height: 1.6;">And more...</li>
+</ul>
+<p><a href="https://joothemes.net/responsive-joomla-templates/joofood-free-joomla-template" target="_blank" rel="noopener noreferrer" class="btn" title="Buy this template with Quickstart Package">You need the Full Quickstart Package - Buy Now</a></p>
+<h2><strong>More information on <a href="https://JooThemes.net/" target="_blank">https://JooThemes.net</a></strong></h2>
+<h2>Module positions<h2>
+<img src="../templates/joothemes-joofood-free/images/modules.png" align="left" hspace="10" style="padding-top:10px;"/>
+</div>
+	]]></description>
+	<files>
+		<folder>css</folder>
+		<folder>fonts</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>includes</folder>
+		<folder>js</folder>
+		<folder>scss</folder>
+		<folder>vendor</folder>
+		<filename>component.php</filename>
+		<filename>error.php</filename>
+		<filename>index.php</filename>
+		<filename>offline.php</filename>
+		<filename>favicon.ico</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>social.php</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>template_preview.png</filename>
+	</files>
+    <positions>
+		<position>top-search</position>
+		<position>navigation</position>
+		<position>fullwidth</position>
+		<position>feature</position>
+		<position>box-line</position>
+		<position>breadcrumbs</position>
+		<position>top-box</position>
+		<position>right</position>
+		<position>content-top</position>
+		<position>content-bottom</position>
+		<position>bottom</position>
+		<position>top_about</position>
+		<position>panelnav</position>
+		<position>debug</position>
+		<position>footer1</position>
+		<position>footer2</position>
+		<position>footer3</position>
+		<position>footer4</position>
+    </positions>
+	<config>
+		<fields name="params">
+			<fieldset name="advanced">
+			<field type="spacer" class="text" label="This is Free Lite Version JooThemes JooFood Joomla 3 Template" />
+			<field type="spacer" class="text" label="&lt;a href='https://joothemes.net/responsive-joomla-templates/joofood-free-joomla-template' target='_blank'&gt;&lt;b style='color:red;text-decoration: underline'&gt;Get this template Premium Version with Quickstart Package, 650+ Google Fonts, footer links removal, Unite Revolution Slideshow, extra modules, support and more options from here!&lt;/b&gt;&lt;/a&gt;" />
+				<field name="rightColumnWidth" type="list" default="4" label="Right Column Width" description="Choose a width for your right column">
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</field>
+				<!-- SHOW FRONTPAGE-->
+				<field name="frontpageshow" type="radio" class="btn-group" default="1" label="Show FrontPage Articles" description="Show FrontPage Articles">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<!-- SUPERFISH-->
+				<field name="superfish" type="list" default="yes" label="Superfish Menu Effect" description="Enable or disable Supperfish effect for main navigation menu. This requires jQuery plugin." filter="word">
+					<option value="yes">Enable</option>
+					<option value="no">Disable</option>
+				</field>
+
+				<!-- MODERNIZR-->
+				<field name="modernizr" type="radio" class="btn-group" default="0"
+					label="Modernizr"
+					description="Enable JavaScript modernizr.js in head">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<!-- FONT-AWESOME -->
+				<field name="fontawesome" type="radio" class="btn-group" default="1"
+					label="Font Awesome"
+					description="Enable Font Awesome for better icons in Bootstrap">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<!-- PIE-->
+				<field name="pie" type="radio" class="btn-group" default="0"
+					label="PIE"
+					description="Enable PIE (CSS3 for IE 9+8)">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<!-- MATERIAL DESIGN-->
+				<field name="materialdesign" type="radio" class="btn-group" default="0"
+					label="Material Design"
+					description="Enable Material Design">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<!-- SASS-->
+				<field name="compile_sass" type="radio" class="btn-group" default="0"
+					label="Compile Sass"
+					description="Do you want to enable Sass compilation)">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+			<!-- LOGO-->
+			<fieldset  name="logo" type="upload_func" label="Logo">
+			<field type="spacer" class="text" label="This is Free Lite Version JooThemes JooFood Joomla 3 Template" />
+			<field type="spacer" class="text" label="&lt;a href='https://joothemes.net/responsive-joomla-templates/joofood-free-joomla-template' target='_blank'&gt;&lt;b style='color:red;text-decoration: underline'&gt;Get this template Premium Version with Quickstart Package, 650+ Google Fonts, footer links removal, Unite Revolution Slideshow, extra modules, support and more options from here!&lt;/b&gt;&lt;/a&gt;" />
+				<field name="logotype" type="list" default="image" label="Logo Type" description="Choose the type of the logo you want to display." filter="word">
+					<option value="image">Image Logo</option>
+					<option value="text">Text Logo</option>
+				</field>
+					<field name="opt1" type="note" label="Image Logo settings" />
+					<field name="logo_file" type="media" label="Select your logo:" default="templates/joothemes-joofood-free/images/logo.png"></field>
+					<field name="logo_link" type="text" label="Logo link:"  description="Example: https://www.joothemes.net" default="index.php"></field>
+					<field name="logo_width" type="text" label="Logo width:" description="Example: 224" default="224"></field>
+					<field name="logo_height" type="text" label="Logo height:" description="Example: 40" default="40"></field>
+
+					<field name="opt2" type="note" label="Text Logo settings" />
+					<field name="logotext"  type="text" default="Joo&lt;span&gt;Food&lt;/span&gt;" label="Logo Text" description="Please add your site title here, it's only displayed if you don't use a the text logo option. Example: Joo&lt;span&gt;Food&lt;/span&gt;" filter="safehtml" />
+
+
+			</fieldset>
+			<!-- LAYOUT -->
+
+<fieldset name="gfont" description="" label="Google Fonts">
+<field type="spacer" class="text" label="This is Free Lite Version JooThemes JooFood Joomla 3 Template" />
+<field type="spacer" class="text" label="&lt;a href='https://joothemes.net/responsive-joomla-templates/joofood-free-joomla-template' target='_blank'&gt;&lt;b style='color:red;text-decoration: underline'&gt;Get this template Premium Version with Quickstart Package, 650+ Google Fonts, footer links removal, Unite Revolution Slideshow, extra modules, support and more options from here!&lt;/b&gt;&lt;/a&gt;" />
+<field name="googleFontBody" class="" type="list" default="Muli" label="Choose Google Font mainbody text" description="You change the font for main text body." ><option value="Muli">Muli</option></field>
+<field name="googleFont" class="" type="list" default="Playfair+Display" label="Choose Google Font" description="You change the font for headers and main menu." ><option value="Playfair+Display">Playfair+Display</option>
+</field>
+<field name="googleFontCharacter" class="" type="text" default="latin,latin-ext" label="Choose the character sets you want:" description="You can use (one or more, each separated by commas): latin,latin-ext,cyrillic,cyrillic-ext,greek,greek-ext,vietnamese,khmer,devanagari. IMPORTANT! If you are not sure if the font supports your language, refer to https://www.google.com/fonts.">
+</field>
+<field name="googleFontWeight" class="" type="text" default="200,400,500,600,800" label="Font weight:" description="You can use (one or more, each separated by commas): 300,400,500,600,700,800,900. IMPORTANT! If you are not sure if the font supports weight, refer to https://www.google.com/fonts.">
+</field>
+</fieldset>
+
+	  <!-- PATTERN -->
+		<fieldset name="Social" label="Social Options">
+	  <field type="spacer" class="text" label="This is Free Lite Version JooThemes JooFood Joomla 3 Template" />
+			<field type="spacer" class="text" label="&lt;a href='https://joothemes.net/responsive-joomla-templates/joofood-free-joomla-template' target='_blank'&gt;&lt;b style='color:red;text-decoration: underline'&gt;Get this template Premium Version with Quickstart Package, 650+ Google Fonts, footer links removal, Unite Revolution Slideshow, extra modules, support and more options from here!&lt;/b&gt;&lt;/a&gt;" />
+      <field name="SocialLink1" label="&lt;div class=&quot;social_1&quot;&gt;Facebook&lt;/div&gt;" type="text" default="" description="Add URL here. (ie: https://www.facebook.com/joothemes.net/)" />
+ 			<field name="SocialLink2" label="&lt;div class=&quot;social_2&quot;&gt;Twitter&lt;/div&gt;" type="text" default="" description="Add URL here. (ie: https://twitter/username)" />
+ 			<field name="SocialLink3" label="&lt;div class=&quot;social_3&quot;&gt;Reddit&lt;/div&gt;" type="text" default="" description="Add URL here." />
+ 			<field name="SocialLink4" label="&lt;div class=&quot;social_4&quot;&gt;Youtube&lt;/div&gt;" type="text" default="" description="Add URL here." />
+ 			<field name="SocialLink5" label="&lt;div class=&quot;social_5&quot;&gt;Vimeo&lt;/div&gt;" type="text" default="" description="Add URL here." />
+ 			<field name="SocialLink6" label="&lt;div class=&quot;social_6&quot;&gt;Linkedin&lt;/div&gt;" type="text" default="" description="Add URL here." />
+ 			<field name="SocialLink7" label="&lt;div class=&quot;social_7&quot;&gt;Instagram&lt;/div&gt;" type="text" default="" description="Add URL here." />
+       </fieldset>
+			</fields>
+
+	</config>
+</extension>

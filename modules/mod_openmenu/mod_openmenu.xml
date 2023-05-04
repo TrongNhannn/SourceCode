@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.7" type="module" client="site" method="new">
+	<name>OpenMenu</name>
+	<author>OpenMenu</author>
+	<creationDate>2017-06-08</creationDate>
+	<copyright>Copyright (C) 2010 - 2017 OpenMenu</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>support@openmenu.com</authorEmail>
+	<authorUrl>http://openmenu.com</authorUrl>
+	<version>2.0</version>
+	<description>Displays an OpenMenu as a module within your Joomla site</description>
+	<files>
+		<filename module="mod_openmenu">mod_openmenu.php</filename>
+		<filename>helper.php</filename>
+		<filename>mod_openmenu.xml</filename>
+		<folder>images</folder>
+		<folder>styles</folder>
+		<folder>toolbox</folder>
+	</files>
+	<config>
+		<fields name="params">
+		<fieldset name="basic">
+			<field name="@spacer" type="spacer" default="" label="" description="" />
+			<field name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+			
+			<field name="@spacer" type="spacer" default="" label="" description="" />
+			<field name="omf_url" type="text" default="" label="OpenMenu (URL)" description="(Link to your OpenMenu (url format: http://openmenu.com/menu/Your_OpenMenu_ID) - live sample: http://openmenu.com/menu/sample)" />
+
+			<field name="menu_filter" type="text" default="" label="Menu Filter" description="Use the Menu Name field to display that menu only" />
+			
+			<field name="group_filter" type="text" default="" label="Group Filter" description="Use the Group Name field to display that group only" />
+
+			<field name="display_type" type="list" default="menu" label="Display Type" description="What are we displaying?">
+				<option value="menu">Menu</option>
+				<option value="restaurant information">Restaurant Information</option>
+	            <option value="restaurant information / menu">Restaurant Information / Menu</option>
+			</field>		
+			
+			<field name="display_columns" type="radio" default="1" label="How many columns?" description="How many columns">
+				<option value="1">One</option>
+				<option value="2">Two</option>
+			</field>
+			
+			<field name="split_on" type="radio" default="item" label="Split on (2 columns only)" description="With 2 columns are we splitting on Menu Items or Menu Groups">
+				<option value="item">Item</option>
+				<option value="group">Group</option>
+			</field>
+			
+			<field name="@spacer" type="spacer" default="" label="" description="" />
+			<field name="show_allergy" type="radio" default="1" label="Show Allergy Information" description="Show Allergy Information">
+				<option value="1">Yes</option>
+				<option value="0">No</option>
+			</field>
+			
+			<field name="show_calories" type="radio" default="1" label="Show Calories" description="Show Calories">
+				<option value="1">Yes</option>
+				<option value="0">No</option>
+			</field>
+			
+			<field name="hide_prices" type="radio" default="0" label="Hide Prices" description="Determines if prices are displayed">
+				<option value="1">Yes</option>
+				<option value="0">No</option>
+			</field>
+			
+			<field name="background_color" type="text" default="" label="Background color" description="Background color in HTML color format - ex. #ececec" />
+			
+			<field name="use_short_tag" type="radio" default="0" label="Use Short Tag" description="Menu Item tags like special, vegatarian, halal, gluten free and such will be shortened to one or two letters">
+				<option value="1">Yes</option>
+				<option value="0">No</option>
+			</field>
+		</fieldset>
+		</fields>
+	</config>
+		
+</extension>

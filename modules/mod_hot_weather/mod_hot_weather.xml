@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	  type="module"
+	  version="1.6.0"
+	  client="site"
+	  method="upgrade">
+	<name>Hot Weather</name> 
+	<author>HotJoomlaTemplates.com</author> 
+	<creationDate>2009-11-05</creationDate> 
+	<copyright>Copyright 2009-2021 by HotThemes.</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<authorEmail>info@hotjoomlatemplates.com</authorEmail> 
+	<authorUrl>https://www.hotjoomlatemplates.com</authorUrl> 
+	<version>3.9.0</version> 
+	<description>HOT_WEATHER_DESC</description>
+	
+	<files>
+		<filename module="mod_hot_weather">mod_hot_weather.php</filename>
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+	</files>
+	
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_hot_weather.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_hot_weather.sys.ini</language>
+	</languages>
+
+	<updateservers>
+		<server type="extension" priority="1" name="Hot Weather Update">https://update.hotjoomlatemplates.com/mod_hot_weather_update.xml</server>
+	</updateservers>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="system" label="LABEL SYSTEM SETTINGS">
+				<field name="spacer1" type="spacer" label="DESC_API_KEY" />
+				<field name="api_key" type="text" default="" label="LABEL_API_KEY" />
+				<field name="spacer2" type="spacer" label="DESC_LOCATION" />
+				<field name="location" type="text" default="London" label="LABEL_LOCATION" />
+				<field name="state" type="text" label="LABEL_STATE" />
+				<field name="country" type="text" label="LABEL_COUNTRY" />
+				<field name="units" type="list" default="0" label="LABEL UNITS" description="DESC UNITS">
+					<option value="metric">LABEL_CELSIUS</option>
+					<option value="imperial">LABEL_FAHRENHEIT</option>
+				</field>
+				<field name="temperature_feels" type="checkbox" label="LABEL_FEELS_LIKE" value="1" />
+				<field name="temperature_min" type="checkbox" label="LABEL_MIN_TEMP" value="1" />
+				<field name="temperature_max" type="checkbox" label="LABEL_MAX_TEMP" value="1" />
+				<field name="pressure" type="checkbox" label="LABEL_PRESSURE" value="1" />
+				<field name="humidity" type="checkbox" label="LABEL_HUMIDITY" value="1" />
+				<field name="visibility" type="checkbox" label="LABEL_VISIBILITY" value="1" />
+				<field name="wind" type="checkbox" label="LABEL_WIND" value="1" />
+				<field name="spacer3" type="spacer" label="DESC_MULTIPLE" />
+				<field name="module_id" type="text" default="" label="LABEL_ID" />
+			</fieldset>
+			<fieldset name="style" label="LABEL_STYLE">
+				<field name="direction" type="list" default="row" label="LABEL_DIRECTION">
+					<option value="row">LABEL_HORIZONTAL</option>
+					<option value="column">LABEL_VERTICAL</option>
+				</field>
+				<field name="value_font" type="text" default="2em" label="LABEL_FONT_VALUE" />
+				<field name="desc_font" type="text" default="1em" label="LABEL_FONT_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+
+</extension>

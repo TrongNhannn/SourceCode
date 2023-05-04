@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="4.0" client="site" method="upgrade">
+    <name>AZDirectory</name>
+    <author>Bmore Creative, Inc.</author>
+	<creationDate>March 2016</creationDate>
+	<copyright>Copyright (C) 2016 Bmore Creative, Inc. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorUrl>bmorecreativeinc.com</authorUrl>
+    <version>7.0.4</version>
+    <description>Arrange contacts in an A-Z, directory-style layout</description>
+    <files>
+        <filename module="mod_azdirectory">mod_azdirectory.php</filename>
+        <filename>mod_azdirectory.xml</filename>
+        <filename>index.html</filename>
+		<filename>helper.php</filename>
+		<folder>assets</folder>
+		<folder>helpers</folder>
+		<folder>language</folder>
+		<folder>sql</folder>
+        <folder>tmpl</folder>
+    </files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_azdirectory.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_azdirectory.sys.ini</language>
+		<language tag="en-GB">es-ES/es-ES.mod_azdirectory.ini</language>
+		<language tag="en-GB">es-ES/es-ES.mod_azdirectory.sys.ini</language>		
+		<language tag="nl-NL">nl-NL/nl-NL.mod_azdirectory.ini</language>
+		<language tag="nl-NL">nl-NL/nl-NL.mod_azdirectory.sys.ini</language>
+		<language tag="fr-FR">fr-FR/fr-FR.mod_azdirectory.ini</language>
+		<language tag="fr-FR">fr-FR/fr-FR.mod_azdirectory.sys.ini</language>
+	</languages>
+	<changelogurl>https://joomla.bmorecreativeinc.com/extensions/mod_azdirectory_changelog.xml</changelogurl>
+	<updateservers>
+		<server type="extension" name="Bmore Creative, Inc. Update Server" priority="1">https://joomla.bmorecreativeinc.com/extensions/mod_azdirectory_j4_update.xml</server>
+	</updateservers>
+	<update>
+		<schemas>
+			<schemapath type="mysql">sql/mysql/updates</schemapath>
+		</schemas>
+	</update>
+	<scriptfile>script.php</scriptfile>
+    <config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/administrator/components/com_contact/models/fields">
+				<field
+					name="id"
+					type="category"
+					label="JCATEGORY"
+					extension="com_contact"
+					published="1"
+					multiple="true"
+					class="multipleCategories"
+					layout="joomla.form.field.list-fancy-select">
+						<option value="">JOPTION_ALL_CATEGORIES</option>
+				</field>
+				
+				<field
+					name="tags"
+					type="tag"
+					label="JTAG"
+					mode="ajax"
+					multiple="true"
+					class="multipleTags" />
+
+				<field
+					name="sortorder"
+					type="list"
+					default="ln"
+					description="MOD_AZDIRECTORY_SORTORDER_DESC"
+					label="MOD_AZDIRECTORY_SORTORDER_LABEL">
+						<option value="ln">MOD_AZDIRECTORY_SORTORDER_LN</option>
+						<option value="fn">MOD_AZDIRECTORY_SORTORDER_FN</option>
+						<option value="component">MOD_AZDIRECTORY_SORTORDER_COMPONENT</option>
+						<option value="sortfield">MOD_AZDIRECTORY_SORTORDER_SORTFIELD</option>
+				</field>
+				
+				<field
+					name="defaultletter"
+					type="sql"
+					default=""
+					showon="sortorder:ln"
+					description="MOD_AZDIRECTORY_DEFAULT_LETTER_DESC"
+					label="MOD_AZDIRECTORY_DEFAULT_LETTER_LABEL"
+					query="SELECT DISTINCT(LEFT(SUBSTRING_INDEX(name, ' ', -1), 1)) AS lastletter FROM #__contact_details WHERE published = 1 ORDER BY lastletter"
+					key_field="lastletter"
+					value_field="lastletter">
+						<option value="">JNONE</option>
+						<option value="All">JALL</option>
+				</field>
+
+				<field
+					name="defaultletterfn"
+					type="sql"
+					default=""
+					showon="sortorder:fn,component,sortfield"
+					description="MOD_AZDIRECTORY_DEFAULT_LETTER_DESC"
+					label="MOD_AZDIRECTORY_DEFAULT_LETTER_LABEL"
+					query="SELECT DISTINCT(LEFT(name, 1)) AS firstletter FROM #__contact_details WHERE published = 1 ORDER BY firstletter"
+					key_field="firstletter"
+					value_field="firstletter">
+						<option value="">JNONE</option>
+						<option value="All">JALL</option>
+				</field>
+
+				<field
+					type="spacer"
+					name="spacer_name"
+					hr="true" />
+
+				<field
+					name="show_name"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					description="MOD_AZDIRECTORY_NAME_DESC"
+					label="MOD_AZDIRECTORY_NAME_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				
+				<field
+					name="lastname_first"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					showon="show_name:1"
+					description="MOD_AZDIRECTORY_LASTNAMEFIRST_DESC"
+					label="MOD_AZDIRECTORY_LASTNAMEFIRST_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				
+				<field
+					name="name_hyperlink"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					showon="show_name:1"
+					description="MOD_AZDIRECTORY_NAME_HYPERLINK_DESC"
+					label="MOD_AZDIRECTORY_NAME_HYPERLINK_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+				<field
+					type="spacer"
+					name="spacer_info"
+					hr="true" />
+
+				<field
+					name="show_con_position"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					description="MOD_AZDIRECTORY_CONTACT_POSITION_DESC"
+					label="MOD_AZDIRECTORY_CONTACT_POSITION_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+		
+				<field
+					name="show_address"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					description="MOD_AZDIRECTORY_STREET_ADDRESS_DESC"
+					label="MOD_AZDIRECTORY_STREET_ADDRESS_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+	
+				<field
+					name="show_suburb"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					description="MOD_AZDIRECTORY_TOWN-SUBURB_DESC"
+					label="MOD_AZDIRECTORY_TOWN-SUBURB_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+	
+				<field
+					name="show_state"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					description="MOD_AZDIRECTORY_STATE-COUNTY_DESC"
+					label="MOD_AZDIRECTORY_STATE-COUNTY_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+	
+				<field
+					name="show_postcode"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					description="MOD_AZDIRECTORY_POST-ZIP_CODE_DESC"
+					label="MOD_AZDIRECTORY_POST-ZIP_CODE_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="postcode_first"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					showon="show_postcode:1"
+					description="MOD_AZDIRECTORY_POST-ZIP_CODEFIRST_DESC"
+					label="MOD_AZDIRECTORY_POST-ZIP_CODEFIRST_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="show_country"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					description="MOD_AZDIRECTORY_COUNTRY_DESC"
+					label="MOD_AZDIRECTORY_COUNTRY_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				
+				<field
+					name="show_misc"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					description="MOD_AZDIRECTORY_MISC_DESC"
+					label="MOD_AZDIRECTORY_MISC_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="misc_layout"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					showon="show_misc:1"
+					description="MOD_AZDIRECTORY_MISC_LAYOUT_DESC"
+					label="MOD_AZDIRECTORY_MISC_LAYOUT_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="show_customfields"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					description="MOD_AZDIRECTORY_CUSTOM_FIELDS_DESC"
+					label="MOD_AZDIRECTORY_CUSTOM_FIELDS_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+	
+				<field
+					type="spacer"
+					name="spacer_alphabet"
+					hr="true" />
+
+				<field
+					name="show_alphabet"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					description="MOD_AZDIRECTORY_ALPHABET_DESC"
+					label="MOD_AZDIRECTORY_ALPHABET_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				
+				<field
+					name="swedish"
+					type="list"
+					default="0"
+					description="MOD_AZDIRECTORY_LANGUAGE_DESC"
+					label="JFIELD_LANGUAGE_LABEL"
+					multiple="true"
+					class="multipleCategories"
+					layout="joomla.form.field.list-fancy-select">
+						<option value="0">MOD_AZDIRECTORY_LANGUAGE_ENGLISH</option>
+						<option value="1">MOD_AZDIRECTORY_LANGUAGE_SWEDISH</option>
+						<option value="2">MOD_AZDIRECTORY_LANGUAGE_RUSSIAN</option>
+						<option value="3">MOD_AZDIRECTORY_LANGUAGE_CZECH</option>
+				</field>				
+
+				<field
+					type="spacer"
+					name="spacer_category"
+					hr="true" />
+
+				<field
+					name="show_category"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					description="MOD_AZDIRECTORY_CATEGORY_DESC"
+					label="MOD_AZDIRECTORY_CATEGORY_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="category_label"
+					type="text"
+					default="Category: "
+					showon="show_category:1"
+					description="MOD_AZDIRECTORY_CATEGORY_LABEL_DESC"
+					label="MOD_AZDIRECTORY_CATEGORY_LABEL_LABEL" />
+				
+				<field
+					type="spacer"
+					name="spacer_telephone"
+					hr="true" />
+				
+				<field
+					name="show_telephone"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					description="MOD_AZDIRECTORY_TELEPHONE_DESC"
+					label="MOD_AZDIRECTORY_TELEPHONE_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				
+				<field
+					name="show_telephone_icon"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					showon="show_telephone:1"
+					description="MOD_AZDIRECTORY_TELEPHONE_ICON_DESC"
+					label="MOD_AZDIRECTORY_TELEPHONE_ICON_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				
+				<field
+					name="telephone_label"
+					type="text"
+					default="t: "
+					showon="show_telephone:1"
+					description="MOD_AZDIRECTORY_TELEPHONE_LABEL_DESC"
+					label="MOD_AZDIRECTORY_TELEPHONE_LABEL_LABEL" />
+				
+				<field
+					name="telephone_hyperlink"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					showon="show_telephone:1"
+					description="MOD_AZDIRECTORY_TELEPHONE_HYPERLINK_DESC"
+					label="MOD_AZDIRECTORY_TELEPHONE_HYPERLINK_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				
+				<field
+					type="spacer"
+					name="spacer_mobile"
+					hr="true" />
+	
+				<field
+					name="show_mobile"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					description="MOD_AZDIRECTORY_MOBILE_DESC"
+					label="MOD_AZDIRECTORY_MOBILE_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="show_mobile_icon"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					showon="show_mobile:1"
+					description="MOD_AZDIRECTORY_MOBILE_ICON_DESC"
+					label="MOD_AZDIRECTORY_MOBILE_ICON_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				
+				<field
+					name="mobile_label"
+					type="text"
+					default="m: "
+					showon="show_mobile:1"
+					description="MOD_AZDIRECTORY_MOBILE_LABEL_DESC"
+					label="MOD_AZDIRECTORY_MOBILE_LABEL_LABEL" />
+
+				<field
+					name="mobile_hyperlink"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					showon="show_mobile:1"
+					description="MOD_AZDIRECTORY_MOBILE_HYPERLINK_DESC"
+					label="MOD_AZDIRECTORY_MOBILE_HYPERLINK_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+				<field
+					type="spacer"
+					name="spacer_fax"
+					hr="true" />
+
+				<field
+					name="show_fax"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					description="MOD_AZDIRECTORY_FAX_DESC"
+					label="MOD_AZDIRECTORY_FAX_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="show_fax_icon"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					showon="show_fax:1"
+					description="MOD_AZDIRECTORY_FAX_ICON_DESC"
+					label="MOD_AZDIRECTORY_FAX_ICON_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				
+				<field
+					name="fax_label"
+					type="text"
+					default="f: "
+					showon="show_fax:1"
+					description="MOD_AZDIRECTORY_FAX_LABEL_DESC"
+					label="MOD_AZDIRECTORY_FAX_LABEL_LABEL" />
+
+				<field
+					name="fax_hyperlink"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					showon="show_fax:1"
+					description="MOD_AZDIRECTORY_FAX_HYPERLINK_DESC"
+					label="MOD_AZDIRECTORY_FAX_HYPERLINK_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+				<field
+					type="spacer"
+					name="spacer_email_to"
+					hr="true" />
+
+				<field
+					name="show_email_to"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					description="MOD_AZDIRECTORY_CONTACT_E_MAIL_DESC"
+					label="JGLOBAL_EMAIL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="show_email_to_icon"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					showon="show_email_to:1"
+					description="MOD_AZDIRECTORY_CONTACT_E_MAIL_ICON_DESC"
+					label="MOD_AZDIRECTORY_CONTACT_E_MAIL_ICON_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="email_to_hyperlink"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					showon="show_email_to:1"
+					description="MOD_AZDIRECTORY_CONTACT_E_MAIL_HYPERLINK_DESC"
+					label="MOD_AZDIRECTORY_CONTACT_E_MAIL_HYPERLINK_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+				<field
+					type="spacer"
+					name="spacer_webpage"
+					hr="true" />
+
+				<field
+					name="show_webpage"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					description="MOD_AZDIRECTORY_WEBPAGE_DESC"
+					label="MOD_AZDIRECTORY_WEBPAGE_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="show_webpage_icon"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					showon="show_webpage:1"
+					description="MOD_AZDIRECTORY_WEBPAGE_ICON_DESC"
+					label="MOD_AZDIRECTORY_WEBPAGE_ICON_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="webpage_hyperlink"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					showon="show_webpage:1"
+					description="MOD_AZDIRECTORY_WEBPAGE_HYPERLINK_DESC"
+					label="MOD_AZDIRECTORY_WEBPAGE_HYPERLINK_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+				<field
+					type="spacer"
+					name="spacer_image"
+					hr="true" />
+	
+				<field
+					name="show_image"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					description="MOD_AZDIRECTORY_IMAGE_DESC"
+					label="MOD_AZDIRECTORY_IMAGE_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+				<field
+					type="spacer"
+					name="spacer_loadjs"
+					hr="true" />
+
+				<field
+					name="loadjs"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					description="MOD_AZDIRECTORY_LOADJS_DESC"
+					label="MOD_AZDIRECTORY_LOADJS_LABEL">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+				<field
+					type="spacer"
+					name="spacer_pagination"
+					hr="true" />
+					
+				<field
+					name="pagination"
+					type="list"
+					default="All"
+					description="MOD_AZDIRECTORY_PAGINATION_DESC"
+					label="MOD_AZDIRECTORY_PAGINATION_LABEL">
+						<option value="5">J5</option>
+						<option value="10">J10</option>
+						<option value="15">J15</option>
+						<option value="20">J20</option>
+						<option value="25">J25</option>
+						<option value="30">J30</option>
+						<option value="50">J50</option>
+						<option value="100">J100</option>
+						<option value="200">J200</option>
+						<option value="500">J500</option>
+						<option value="All">JALL</option>
+				</field>
+
+			</fieldset>
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					class="form-select"
+					validate="moduleLayout" />
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					rows="3"
+					validate="CssIdentifier" />
+			</fieldset>
+		</fields>
+    </config>
+</extension>

@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){document.getElementById("modazdirectory__select").addEventListener("change",function(e){this.form.submit()})});

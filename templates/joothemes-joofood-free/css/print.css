@@ -1,0 +1,47 @@
+/*******************************************************************************************
+
+@copyright (C) 2019 JooThemes.net
+
+http://joothemes.net
+
+*******************************************************************************************/
+
+
+body {
+   padding: 0 20px;
+}
+#error{text-align: center; margin: auto; background-color: #4baf50; padding: 15px; max-width: 500px;}
+
+a {
+
+      color: #4baf50;
+      text-decoration: none;
+}
+
+a:focus, a:hover {
+  text-decoration: underline;
+}
+
+#mailto-window{
+	position: relative;
+}
+
+#mailto-window h2{
+	font-size: 18px; font-weight: 700;
+}
+
+.mailto-close{
+   text-align: right; position: absolute; top: 19px; right: 0; line-height: normal;
+}
+
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+    padding: 3px;
+}
+
+label{
+	margin: 5px 0 0 0;
+}
+
+button{
+	border: 0; margin-right: 10px; margin-top: 0px; background-color: #4baf50; color: #fff;
+}
